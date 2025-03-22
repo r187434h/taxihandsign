@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../rooraday"
+		},
+		{
+			"path": "../Roora Day Event"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Taxi-hand-signs"
+	}
+}

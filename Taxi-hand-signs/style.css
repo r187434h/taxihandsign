@@ -1,0 +1,300 @@
+/* styles.css */
+
+/* Define CSS variables for easy theme management */
+:root {
+    --primary-color: #4CAF50; /* Header background */
+    --secondary-color: #fff; /* Text color */
+    --accent-color: #ffcccc; /* Warning message */
+    --text-dark: #333; /* General dark text */
+    --box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    width: 90%;
+    max-width: 600px;
+    margin: 1em auto;
+}
+
+.region-selector {
+    margin-bottom: 2em;
+}
+
+select {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+.hand-signal {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 0.5em;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 2px 4px var(--box-shadow);
+    text-align: center;
+    background-color: var(--secondary-color);
+}
+
+.hand-signal img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.hand-signal h3 {
+    margin-top: 0.5em;
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+/*Card Styles*/
+#signal-container{
+    display: flex;
+   justify-content: center;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 2em;
+    
+}
+/* Animated message styles */
+.animated-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    padding: 10px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    z-index: 1000;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-message.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Keyframe animations */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Keyframe for card fade-in effect */
+@keyframes fadeInUp {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+    }
+    .hand-signal {
+        max-width: 90%;
+    }
+}
+
+
+.carousel {
+    margin-bottom: 4rem;
+    
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+    color: rgb(255, 255, 255) !important;
+    transition: color 0.5s ease;
+    opacity: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+    height: 32rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    
+}
+
+
+/* Specific background images for each slide */
+.carousel-item:nth-child(1) {
+    background-image: url('Images/home.jpg'); /* Replace with your image URL */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.carousel-item:nth-child(2) {
+    background-image: url('Images/FLAG.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+} /* Replace with your image URL */
+
+
+.carousel-item:nth-child(3) {
+    background-image: url('Images/pic1.jpg'); /* Replace with your image URL */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+
+/* Adjust carousel content for different screen sizes */
+@media (min-width: 40em) {
+    /* Bump up size of carousel content */
+    .carousel-caption {
+        margin-bottom: 10rem;
+        font-size: 1.5rem;
+        line-height: 2;
+    }
+
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
+}
+.card-icon {
+    font-size: 50px;
+    color: #ffc107;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+  }
+  .card:hover .card-icon {
+    transform: scale(1.2);
+  }
+  .card-title {
+    font-weight: bold;
+  }
+
+/*about*/
+.about-section {
+    background-color: #f8f9fa;
+  }
+  
+  .about-image {
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Adjust to fit within the container */
+    max-width: 700px; /* Prevents image from becoming too large */
+    height: 500px; /* Maintains aspect ratio */
+    border-radius: 20px; /* Rounded edges */
+    object-fit: cover; /* Ensures the image covers the space well without distortion */
+  }
+  
+  #About h1 {
+    color: #333;
+  }
+  
+  #About p {
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  /* Social media */
+
+  /* Social Icon Hover */
+.social-icon {
+  font-size: 1.8rem;
+  color: #ffc107;
+  transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.social-icon:hover {
+  color: #fff;
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Social Icon Hover & Animation */
+.social-icon {
+    font-size: 2.5rem; /* Bigger size */
+    color: #ffc107;
+    transition: transform 0.4s ease, color 0.4s ease;
+    display: inline-block;
+  }
+  
+  .social-icon:hover {
+    color: #fff;
+    transform: rotate(10deg) scale(1.3);
+    animation: pulse 1s infinite;
+  }
+  
+  /* Pulse Animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* WhatsApp Floating Button */
+  .whatsapp-float {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+  }
+  
